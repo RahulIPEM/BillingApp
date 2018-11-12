@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_add_job"
+        android:icon="@drawable/outline_library_add_24px"
+        android:title="Add Job" />
+
+    <item
+        android:id="@+id/navigation_add_party"
+        android:icon="@drawable/outline_group_add_24px"
+        android:title="Add Party" />
+
+    <item
+        android:id="@+id/navigation_new_job"
+        android:icon="@drawable/outline_note_add_24px"
+        android:title="New Job" />
+
+    <item
+        android:id="@+id/navigation_receipt"
+        android:icon="@drawable/outline_receipt_24px"
+        android:title="Receipt" />
+
+    <item
+        android:id="@+id/navigation_exit"
+        android:icon="@drawable/outline_exit_to_app_24px"
+        android:title="Exit" />
+
+</menu>
