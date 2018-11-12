@@ -19,7 +19,7 @@ import android.widget.Toast;
 public class AddJob extends Fragment implements OnClickListener {
 
     TextView txtFontBook;
-    Button btnAddBook,btnUpdate;
+    Button btnAddJobType;
 
     public AddJob() {
         // Required empty public constructor
@@ -33,12 +33,10 @@ public class AddJob extends Fragment implements OnClickListener {
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(),"fonts/fontawesome-webfont.ttf");
         txtFontBook = (TextView)view.findViewById(R.id.txtFontBook);
         txtFontBook.setTypeface(font);
-        txtFontBook.setText("\uf02d");
+        txtFontBook.setText("\uf0b1");
 
-        btnAddBook = (Button)view.findViewById(R.id.btnAddBook);
-        btnAddBook.setOnClickListener(this);
-        btnUpdate = (Button)view.findViewById(R.id.btnGoToUpdate);
-        btnUpdate.setOnClickListener(this);
+        btnAddJobType = (Button)view.findViewById(R.id.btnAddJobType);
+        btnAddJobType.setOnClickListener(this);
 
         // Inflate the layout for this fragment
         return view;
@@ -47,11 +45,8 @@ public class AddJob extends Fragment implements OnClickListener {
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btnAddBook:
-                Toast.makeText(getActivity(),"Add Button Clicked.",Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.btnGoToUpdate:
-                Toast.makeText(getActivity(),"Update Button Clicked.",Toast.LENGTH_SHORT).show();
+            case R.id.btnAddJobType:
+                Toast.makeText(getActivity(),"Add Job Type Clicked.",Toast.LENGTH_SHORT).show();
                 break;
         }
 

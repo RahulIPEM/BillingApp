@@ -21,15 +21,21 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_add_job:
+                    loadInitialFragment(new AddJob());
                     //mTextMessage.setText("Add Job");
-                    Fragment fragment=new AddJob();
+                    /*Fragment fragment=new AddJob();
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.frameContainer,fragment);
-                    fragmentTransaction.commit();
+                    fragmentTransaction.commit();*/
                     return true;
                 case R.id.navigation_add_party:
-                    //mTextMessage.setText("Add Party");
+                    loadInitialFragment(new AddParty());
+                    /*Fragment fragment=new AddParty();
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.frameContainer,fragment);
+                    fragmentTransaction.commit();*/
                     return true;
                 case R.id.navigation_new_job:
                     //mTextMessage.setText("New Job");
@@ -45,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    private void loadInitialFragment() {
-        Fragment fragment=new AddJob();
+    private void loadInitialFragment(Fragment fragmentParam) {
+        Fragment fragment = fragmentParam;
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frameContainer,fragment);
@@ -58,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        loadInitialFragment();
+        loadInitialFragment(new AddJob());
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
