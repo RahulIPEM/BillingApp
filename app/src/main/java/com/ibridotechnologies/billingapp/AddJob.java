@@ -49,7 +49,6 @@ public class AddJob extends Fragment implements OnClickListener {
                 Toast.makeText(getActivity(),"Add Job Type Clicked.",Toast.LENGTH_SHORT).show();
                 break;
         }
-
     }
 
 }

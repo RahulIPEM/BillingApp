@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".JobType">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16sp">
+
+        <TextView
+            android:id="@+id/txtFontJobType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Font Awesome"
+            android:textSize="50dp"
+            android:textColor="#000000"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/txtFontJobText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type of Job"
+            android:textColor="#000000"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/txtFontJobType"
+            android:layout_margin="6sp"/>
+
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/spinnerJobType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintText="Select Job Type"
+            android:layout_below="@+id/txtFontJobText"
+            android:layout_marginTop="16sp"
+            android:layout_marginBottom="16sp"/>
+
+        <Button
+            android:id="@+id/btnGetJob"
+            android:layout_width="230sp"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:layout_below="@+id/spinnerJobType"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16sp"
+            android:layout_marginBottom="16sp"/>
+
+    </RelativeLayout>
+
+</FrameLayout>
