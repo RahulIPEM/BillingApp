@@ -1,13 +1,18 @@
 package com.ibridotechnologies.billingapp;
 
 
+import android.app.ProgressDialog;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.ibridotechnologies.billingapp.getJson.spinnerstate.JSONDownloaderSP;
 
 
 /**
@@ -16,6 +21,10 @@ import android.widget.TextView;
 public class AddParty extends Fragment {
 
     TextView txtFontParty;
+    Spinner spinnerState,spinnerDistrict;
+    ProgressDialog pg;
+    AlertDialog.Builder builder;
+    String spJsonURL ="http://www.acmecreations.co.in/api/AcmeQuotation/GetStateList";
 
     public AddParty() {
         // Required empty public constructor
@@ -30,6 +39,19 @@ public class AddParty extends Fragment {
         txtFontParty = (TextView)view.findViewById(R.id.txtFontParty);
         txtFontParty.setTypeface(font);
         txtFontParty.setText("\uf234");
+
+        spinnerState = (Spinner)view.findViewById(R.id.spinnerState);
+        spinnerDistrict = (Spinner)view.findViewById(R.id.spinnerDistrict);
+
+        pg = new ProgressDialog(getActivity());
+        pg.setTitle("States");
+        pg.setMessage("Loading... Please wait.");
+        pg.show();
+
+        new JSONDownloaderSP(getActivity(),spJsonURL,spinnerState,spinnerDistrict,pg).execute();
+
+        builder = new AlertDialog.Builder(getActivity());
+
         // Inflate the layout for this fragment
         return view;
     }
