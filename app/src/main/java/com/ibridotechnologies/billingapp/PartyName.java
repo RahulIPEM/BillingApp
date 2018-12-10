@@ -64,13 +64,14 @@ public class PartyName extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnGetParty:
-                Toast.makeText(getActivity(),"Party Clicked.",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(),"Party Clicked.",Toast.LENGTH_SHORT).show();
                 Fragment fragment = new JobType();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frameContainer,fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
+                //fragmentManager.beginTransaction().replace(R.id.frameContainer, fragment).addToBackStack(null).commit();
                 break;
         }
     }
