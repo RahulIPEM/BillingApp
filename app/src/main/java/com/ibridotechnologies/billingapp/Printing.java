@@ -17,12 +17,12 @@ import android.widget.Toast;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Paper extends Fragment implements View.OnClickListener {
+public class Printing extends Fragment implements View.OnClickListener {
 
-    TextView txtFontPaper;
-    Button btnGetPaper;
+    TextView txtFontPrinting;
+    Button btnGetPrinting;
 
-    public Paper() {
+    public Printing() {
         // Required empty public constructor
     }
 
@@ -31,26 +31,26 @@ public class Paper extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_paper, container, false);
+        View view = inflater.inflate(R.layout.fragment_printing, container, false);
 
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(),"fonts/fontawesome-webfont.ttf");
-        txtFontPaper = (TextView)view.findViewById(R.id.txtFontPaper);
-        txtFontPaper.setTypeface(font);
-        txtFontPaper.setText("\uf0f6");
+        txtFontPrinting = (TextView)view.findViewById(R.id.txtFontPrinting);
+        txtFontPrinting.setTypeface(font);
+        txtFontPrinting.setText("\uf02f");
 
-        btnGetPaper = (Button)view.findViewById(R.id.btnGetPaper);
-        btnGetPaper.setOnClickListener(this);
+        btnGetPrinting = (Button)view.findViewById(R.id.btnGetPaper);
+        btnGetPrinting.setOnClickListener(this);
 
         // Inflate the layout for this fragment
         return view;
-
     }
 
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btnGetPaper:
-                Toast.makeText(getActivity(),"Paper Clicked.",Toast.LENGTH_SHORT).show();
-                Fragment fragment = new Printing();
+            case R.id.btnGetPrinting:
+                Toast.makeText(getActivity(),"Printing Clicked.",Toast.LENGTH_SHORT).show();
+                Fragment fragment = new Cutting();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frameContainer,fragment);

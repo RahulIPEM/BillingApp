@@ -17,12 +17,12 @@ import android.widget.Toast;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Paper extends Fragment implements View.OnClickListener {
+public class Cutting extends Fragment implements View.OnClickListener {
 
-    TextView txtFontPaper;
-    Button btnGetPaper;
+    TextView txtFontCutting;
+    Button btnGetCutting;
 
-    public Paper() {
+    public Cutting() {
         // Required empty public constructor
     }
 
@@ -31,31 +31,31 @@ public class Paper extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_paper, container, false);
+        View view = inflater.inflate(R.layout.fragment_cutting, container, false);
 
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(),"fonts/fontawesome-webfont.ttf");
-        txtFontPaper = (TextView)view.findViewById(R.id.txtFontPaper);
-        txtFontPaper.setTypeface(font);
-        txtFontPaper.setText("\uf0f6");
+        txtFontCutting = (TextView)view.findViewById(R.id.txtFontPrinting);
+        txtFontCutting.setTypeface(font);
+        txtFontCutting.setText("\uf0c4");
 
-        btnGetPaper = (Button)view.findViewById(R.id.btnGetPaper);
-        btnGetPaper.setOnClickListener(this);
+        btnGetCutting = (Button)view.findViewById(R.id.btnGetCutting);
+        btnGetCutting.setOnClickListener(this);
 
         // Inflate the layout for this fragment
         return view;
-
     }
 
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btnGetPaper:
-                Toast.makeText(getActivity(),"Paper Clicked.",Toast.LENGTH_SHORT).show();
-                Fragment fragment = new Printing();
+            case R.id.btnGetCutting:
+                Toast.makeText(getActivity(),"Cutting Clicked.",Toast.LENGTH_SHORT).show();
+                /*Fragment fragment = new Cutting();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frameContainer,fragment);
                 fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                fragmentTransaction.commit();*/
                 break;
         }
     }
